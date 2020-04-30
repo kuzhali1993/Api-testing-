@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace APIFramework_Document360
+namespace APIFramework_Document360.Utilities
 {
-    public class Class1
+    class WebClient
     {
+
     }
 }
