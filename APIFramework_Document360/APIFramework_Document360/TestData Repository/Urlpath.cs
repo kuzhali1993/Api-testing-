@@ -9,7 +9,7 @@ namespace APIFramework_Document360.TestData_Repository
     class Urlpath :BaseClass 
     {
         #region Categories
-        public static string GetCategoryByID = GetConfigValue("BaseUrl")+ "/api/categories/";
+        public static string GetCategories = GetConfigValue("BaseUrl")+ "/api/categories?projectDocumentVersionId=";
         #endregion
     }
 }

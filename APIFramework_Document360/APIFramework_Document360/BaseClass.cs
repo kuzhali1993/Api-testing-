@@ -11,6 +11,7 @@ namespace APIFramework_Document360
     public class BaseClass
     {
         public Dictionary<string, dynamic> EnvironmentVariable = new Dictionary<string, dynamic>();
+        public Dictionary<string, string> Headers = new Dictionary<string, string>();
         public void LoadVariable()
         {
             var appsettings = ConfigurationManager.GetSection("appSettings") as NameValueCollection;
