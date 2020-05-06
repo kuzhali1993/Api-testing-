@@ -15,13 +15,18 @@ namespace APIFramework_Document360.Utilities
             
                 HttpClient httpclient = new HttpClient();
                 var requestMessage = new HttpRequestMessage(HttpMethod.Get, url);
-                Task<HttpResponseMessage> response = httpclient.SendAsync(requestMessage);
                 
+            try
+            {
+                Task<HttpResponseMessage> response = httpclient.SendAsync(requestMessage);
                 HttpResponseMessage responseMessage = response.Result;
                 return responseMessage;
-                
-            
-            
+            }
+            finally
+            {
+                httpclient.Dispose();
+
+            }
         }
 
         public static HttpResponseMessage GetResponse(string url, Dictionary<string, string> Headers)
@@ -33,9 +38,21 @@ namespace APIFramework_Document360.Utilities
                 requestMessage.Headers.Add(header.Key, header.Value);
 
             }
-            Task<HttpResponseMessage> response = httpclient.SendAsync(requestMessage);
-            HttpResponseMessage responseMessage = response.Result;
-            return responseMessage;
+          //  Console.WriteLine("request message -" + requestMessage.ToString());
+            try
+            {
+                Task<HttpResponseMessage> response = httpclient.SendAsync(requestMessage);
+                HttpResponseMessage responseMessage = response.Result;
+                Reporter.LogDetails(responseMessage.RequestMessage.RequestUri.ToString());
+               Reporter.LogDetails(responseMessage.RequestMessage.Headers.ToString());
+                return responseMessage;
+                
+            }
+            finally
+            {
+                httpclient.Dispose();
+
+            }
         }
 
         public static HttpResponseMessage PostRequest(string url, string payload, Dictionary<string, string> Headers)

@@ -1,0 +1,525 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Document360</title>
+  <link rel="apple-touch-icon" href="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png">
+  <link rel="shortcut icon" href="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png">
+  <link href="https://cdn.rawgit.com/extent-framework/extent-github-cdn/cd00a5e/spark/css/style.css" rel="stylesheet" />
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <style> 
+                
+            </style>
+</head>
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+
+
+
+<body class="test-view  standard">
+    <div class="app header-dark side-nav-folded">
+        <div class="layout">
+            <div class="header navbar">
+    <div class="header-container">
+        <div class="nav-logo">
+          <a href="index.html">
+            <div class="logo logo-dark" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+            <div class="logo logo-white" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+          </a>
+        </div>
+        <ul class="nav-left">
+          <li>
+            <a class="sidenav-fold-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+            <a class="sidenav-expand-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+          </li>
+          <li class="search-box">
+            <a class="search-toggle" href="javascript:void(0);">
+              <i class="search-icon fa fa-search"></i>
+              <i class="search-icon-close fa fa-close"></i>
+            </a>
+          </li>
+          <li class="search-input">
+            <input id="search-tests" class="form-control" type="text" placeholder="Type to search...">
+          </li>
+        </ul>
+        <ul class="nav-right">
+          <li class="m-r-10">
+            <a href="#">
+              <span class="badge badge-primary">Edited reportername</span>
+            </a>
+          </li>
+            <li class="m-r-10">
+                <a href="#">
+                    <span class="badge badge-primary">05/05/20 10:44:18 PM</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+            <div class="side-nav side-nav-folded">
+  <div class="side-nav-inner">
+    <ul class="side-nav-menu scrollable">
+      <li class="nav-item dropdown">
+        <a id="nav-test" class="dropdown-toggle" href="index.html">
+          <span class="icon-holder">
+            <i class="fa fa-align-left"></i>
+          </span>
+          <span class="title">Tests</span>
+        </a>
+      </li>
+            <li class="nav-item dropdown">
+        <a id="nav-dashboard" class="dropdown-toggle" href="dashboard.html">
+          <span class="icon-holder">
+            <i class="fa fa-bar-chart"></i>
+          </span>
+          <span class="title">Dashboard</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="side-nav-controls">
+    <ul>
+      <li>
+        <a href="#" class="lightsout" style="color:#8a8a8a;">
+          <i class="fa fa-desktop"></i>"</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+            <div class="page-container">
+                <div class="main-content">
+                    <div class="test-wrapper row">
+                        <div class="test-list">
+                            <div class="test-list-tools">
+                                <ul class="tools pull-left">
+                                    <li>
+                                        <a href="">
+                                            <span class="font-size-14">Tests</span>
+                                        </a>
+                                    </li> 
+                                </ul>
+                                <ul class="tools text-right">
+									<li class="user-profile dropdown dropdown-animated scale-left">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+											<i class="fa fa-exclamation-circle"></i>
+										</a>
+										<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+											<a status="fail" class="dropdown-item" href="#"><span>Fail</span><span class="status danger pull-right"></span></a>																																																							<div class="dropdown-divider"></div>
+											<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+										</ul>
+									</li>
+																		                                </ul>
+                            </div>
+                            <div class="test-list-wrapper scrollable">
+                                <ul class="test-list-item">
+										<li class="test-item" status="fail" author="" device="" tag=""> 
+											<div class="status-avatar fail-bg">
+												<i class="fa fa-times text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">CreateCategory</p> 
+													<p class="duration text-sm">0h:0m:1s+762ms</p> 
+													<span class="datetime">22:44:18 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-fail">CreateCategory</h5>
+															<span class='badge badge-success'>05/05/20 10:44:18 PM</span>
+															<span class='badge badge-danger'>05/05/20 10:44:20 PM</span>
+															<span class='badge badge-default'>0h:0m:1s+762ms</span>
+														</div>
+																											</div>
+												</div>
+<div class="mt-4">
+	
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">GetCategory_ForvalidData</div>
+						<div class="status-avatar float-right fail-bg">
+							<i class="fa fa-times text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>22:44:20</td>
+				<td>
+https://api.document360.io/api/categories?projectDocumentVersionId=5ff40425-9bef-4f89-a38c-2bd7f4128c73									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>22:44:20</td>
+				<td>
+<span class='badge black-text red'>sample text</span>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>22:44:20</td>
+				<td>
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5EQkJOVFl5UWpKQk1rUkNSVEE0TmtJM05EVXpRakUxTmpVeVJUWkVSRFpFT0VaRU5EWkdOZyJ9.eyJpc3MiOiJodHRwczovL3NlY3VyZS5kb2N1bWVudDM2MC5pby8iLCJzdWIiOiJhdXRoMHw1YWQwM2QyYjZkNTk4OTBlODYzNWE1OTYiLCJhdWQiOlsiaHR0cHM6Ly9kb2N1bWVudDM2MC1wb3J0YWwtYXBpIiwiaHR0cHM6Ly9kb2MzNjAtcHJvZC5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNTg4MzI3NDk0LCJleHAiOjE1ODgzMzQ2OTQsImF6cCI6ImdlanlRMnZzRUlDbklHOUphcEw0VXZ3RnBWQWp6Ym9pIiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCJ9.AN8CWa7b-PGHr-D13p6GZuvjKtOSrTQXvLqHaJsnFbq8s3Q6hhLGmZGinC7oe2wgEF9cs2wugW44b-mGH0A6OqCwiIvmYDu5elOf_2Pu-SiJ0nhriwrPSTqwy_JYl2D9vBU9Y4bfK0xxKbwdL55jUpYL6DsuOW5Eb9_RVlTYTm3mnfDA9zR9_BaHmksRlIOyI3EVFYMjVUel-BQh4O8DtrmU4Kq9GtANvdoeYhway99aMjSqAAnL984Br8KRrn8u9ksn8kORCedId-cwbRbj-42znJOX2BHE8BO4L0sxccM2uBzvdduWyGfNv4O16xVoXFkvNrV5PVyMk2hotxKkDw
+ProjectId: eb1af632-8833-4f0f-997d-446764558827									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>22:44:20</td>
+				<td>
+<span class='badge black-text red'>sample text</span>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>22:44:20</td>
+				<td>
+Testcase Failed with error: -  path value is not same
+  Expected string length 22 but was 12. Strings differ at index 12.
+  Expected: "new category gtrytr yt"
+  But was:  "new category"
+  -----------------------^									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+	</div>
+
+</div>
+											</div>
+										</li>
+										<li class="test-item" status="fail" author="" device="" tag=""> 
+											<div class="status-avatar fail-bg">
+												<i class="fa fa-times text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">GetCategories</p> 
+													<p class="duration text-sm">0h:0m:1s+664ms</p> 
+													<span class="datetime">22:44:24 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-fail">GetCategories</h5>
+															<span class='badge badge-success'>05/05/20 10:44:24 PM</span>
+															<span class='badge badge-danger'>05/05/20 10:44:26 PM</span>
+															<span class='badge badge-default'>0h:0m:1s+664ms</span>
+														</div>
+																											</div>
+												</div>
+<div class="mt-4">
+	
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">GetCategory_ForvalidData</div>
+						<div class="status-avatar float-right fail-bg">
+							<i class="fa fa-times text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>22:44:25</td>
+				<td>
+https://api.document360.io/api/categories?projectDocumentVersionId=5ff40425-9bef-4f89-a38c-2bd7f4128c73									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>22:44:25</td>
+				<td>
+<span class='badge black-text red'>sample text</span>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>22:44:25</td>
+				<td>
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5EQkJOVFl5UWpKQk1rUkNSVEE0TmtJM05EVXpRakUxTmpVeVJUWkVSRFpFT0VaRU5EWkdOZyJ9.eyJpc3MiOiJodHRwczovL3NlY3VyZS5kb2N1bWVudDM2MC5pby8iLCJzdWIiOiJhdXRoMHw1YWQwM2QyYjZkNTk4OTBlODYzNWE1OTYiLCJhdWQiOlsiaHR0cHM6Ly9kb2N1bWVudDM2MC1wb3J0YWwtYXBpIiwiaHR0cHM6Ly9kb2MzNjAtcHJvZC5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNTg4MzI3NDk0LCJleHAiOjE1ODgzMzQ2OTQsImF6cCI6ImdlanlRMnZzRUlDbklHOUphcEw0VXZ3RnBWQWp6Ym9pIiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCJ9.AN8CWa7b-PGHr-D13p6GZuvjKtOSrTQXvLqHaJsnFbq8s3Q6hhLGmZGinC7oe2wgEF9cs2wugW44b-mGH0A6OqCwiIvmYDu5elOf_2Pu-SiJ0nhriwrPSTqwy_JYl2D9vBU9Y4bfK0xxKbwdL55jUpYL6DsuOW5Eb9_RVlTYTm3mnfDA9zR9_BaHmksRlIOyI3EVFYMjVUel-BQh4O8DtrmU4Kq9GtANvdoeYhway99aMjSqAAnL984Br8KRrn8u9ksn8kORCedId-cwbRbj-42znJOX2BHE8BO4L0sxccM2uBzvdduWyGfNv4O16xVoXFkvNrV5PVyMk2hotxKkDw
+ProjectId: eb1af632-8833-4f0f-997d-446764558827									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>22:44:25</td>
+				<td>
+<span class='badge black-text red'>sample text</span>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>22:44:25</td>
+				<td>
+Testcase Failed with error: -  path value is not same
+  Expected string length 22 but was 12. Strings differ at index 12.
+  Expected: "new category gtrytr yt"
+  But was:  "new category"
+  -----------------------^									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">GetCategories_Invaliddata</div>
+						<div class="status-avatar float-right fail-bg">
+							<i class="fa fa-times text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>22:44:26</td>
+				<td>
+https://api.document360.io/api/categories?projectDocumentVersionId=5ff40425-9bef-4f89-a38c-2bd7f4128c73									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>22:44:26</td>
+				<td>
+<span class='badge black-text red'>sample text</span>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>22:44:26</td>
+				<td>
+ProjectId: eb1af632-8833-4f0f-997d-446764558827									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>22:44:26</td>
+				<td>
+<span class='badge black-text red'>sample text</span>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>22:44:26</td>
+				<td>
+Testcase Failed with error: -  Expected status code is not equal to actual code
+  Expected: 200
+  But was:  401									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+	</div>
+
+</div>
+											</div>
+										</li>
+										<li class="test-item" status="fail" author="" device="" tag=""> 
+											<div class="status-avatar fail-bg">
+												<i class="fa fa-times text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">sample</p> 
+													<p class="duration text-sm">0h:0m:1s+800ms</p> 
+													<span class="datetime">22:44:26 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-fail">sample</h5>
+															<span class='badge badge-success'>05/05/20 10:44:26 PM</span>
+															<span class='badge badge-danger'>05/05/20 10:44:27 PM</span>
+															<span class='badge badge-default'>0h:0m:1s+800ms</span>
+														</div>
+																											</div>
+												</div>
+<div class="mt-4">
+	
+	<div class="accordion">
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">GetCategories_WithValidData</div>
+						<div class="status-avatar float-right fail-bg">
+							<i class="fa fa-times text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>22:44:27</td>
+				<td>
+https://api.document360.io/api/categories?projectDocumentVersionId=5ff40425-9bef-4f89-a38c-2bd7f4128c73									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>22:44:27</td>
+				<td>
+<span class='badge black-text red'>sample text</span>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>22:44:27</td>
+				<td>
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5EQkJOVFl5UWpKQk1rUkNSVEE0TmtJM05EVXpRakUxTmpVeVJUWkVSRFpFT0VaRU5EWkdOZyJ9.eyJpc3MiOiJodHRwczovL3NlY3VyZS5kb2N1bWVudDM2MC5pby8iLCJzdWIiOiJhdXRoMHw1YWQwM2QyYjZkNTk4OTBlODYzNWE1OTYiLCJhdWQiOlsiaHR0cHM6Ly9kb2N1bWVudDM2MC1wb3J0YWwtYXBpIiwiaHR0cHM6Ly9kb2MzNjAtcHJvZC5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNTg4MzI3NDk0LCJleHAiOjE1ODgzMzQ2OTQsImF6cCI6ImdlanlRMnZzRUlDbklHOUphcEw0VXZ3RnBWQWp6Ym9pIiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCJ9.AN8CWa7b-PGHr-D13p6GZuvjKtOSrTQXvLqHaJsnFbq8s3Q6hhLGmZGinC7oe2wgEF9cs2wugW44b-mGH0A6OqCwiIvmYDu5elOf_2Pu-SiJ0nhriwrPSTqwy_JYl2D9vBU9Y4bfK0xxKbwdL55jUpYL6DsuOW5Eb9_RVlTYTm3mnfDA9zR9_BaHmksRlIOyI3EVFYMjVUel-BQh4O8DtrmU4Kq9GtANvdoeYhway99aMjSqAAnL984Br8KRrn8u9ksn8kORCedId-cwbRbj-42znJOX2BHE8BO4L0sxccM2uBzvdduWyGfNv4O16xVoXFkvNrV5PVyMk2hotxKkDw
+ProjectId: eb1af632-8833-4f0f-997d-446764558827									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>22:44:27</td>
+				<td>
+<span class='badge black-text red'>sample text</span>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>22:44:27</td>
+				<td>
+Testcase Passed!									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab">
+					<h5 class="card-title">
+						<div class="node">GetCategories_Invaliddata</div>
+						<div class="status-avatar float-right fail-bg">
+							<i class="fa fa-times text-white"></i>
+                        </div>
+					</h5>
+				</div>
+				<div class="collapse">
+					<div class="card-body">
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>22:44:27</td>
+				<td>
+https://api.document360.io/api/categories?projectDocumentVersionId=5ff40425-9bef-4f89-a38c-2bd7f4128c73									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>22:44:27</td>
+				<td>
+<span class='badge black-text red'>sample text</span>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>22:44:27</td>
+				<td>
+ProjectId: eb1af632-8833-4f0f-997d-446764558827									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>22:44:27</td>
+				<td>
+<span class='badge black-text red'>sample text</span>									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>22:44:27</td>
+				<td>
+Testcase Failed with error: -  Expected status code is not equal to actual code
+  Expected: 200
+  But was:  401									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
+				</div>
+			</div>
+	</div>
+
+</div>
+											</div>
+										</li>
+                                </ul>    
+                            </div>
+                        </div>
+                        <div class="test-content scrollable">
+                            <div class="test-content-tools">
+                                <ul>
+                                    <li>
+                                        <a class="back-to-test" href="javascript:void(0)">
+                                            <i class="fa fa-arrow-left"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="test-content-detail">
+                                <div class="detail-body"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<script type='text/javascript'>
+	
+</script>
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/f97b667/spark/js/script.js"></script>
+
+</body>
+
+</html>

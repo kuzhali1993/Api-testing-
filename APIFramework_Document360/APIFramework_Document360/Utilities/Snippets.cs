@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace APIFramework_Document360.Utilities
 {
-    class Snippets
+    class Snippets : BaseClass
     {
         public static void AssertResponseCode(HttpResponseMessage response,int statuscode)
         {
@@ -19,15 +19,31 @@ namespace APIFramework_Document360.Utilities
             
         }
 
-        public static void CheckJsonValue(HttpResponseMessage response,string xpath,string value)
+        public static void CheckJsonValue(HttpResponseMessage response,string xpath,Condition cond,string value)
         {
             if(response.IsSuccessStatusCode)
             {
                 var content = response.Content.ReadAsStringAsync().Result;
                 var Jsoncontent = JObject.Parse(content);
-                var token =Jsoncontent.SelectToken("categories[0].title");
-                Assert.AreEqual(value, token.ToString(),"path value is not same");
+                var token =Jsoncontent.SelectToken(xpath);
+                switch(cond)
+                {
+                    case Condition.Equal:
+                        {
+                            Assert.AreEqual(value, token.ToString(), "path value is not same");
+                            break;
+                        }
+                    case Condition.NotEqual:
+                        {
+                            Assert.AreNotEqual(value, token.ToString(), "Excepted and actual values are equal");
+                            break;
+                        }
+                    default: break;
+
+                }
+                
                 //Console.WriteLine(token.ToString());
+               
             }
             else
             {
@@ -35,6 +51,24 @@ namespace APIFramework_Document360.Utilities
             }
         }
 
+        public static void CheckBodyContains(HttpResponseMessage response,string SearchKeyword)
+        {
+            String ResponseStr = response.Content.ReadAsStringAsync().Result.ToString();
+            if(ResponseStr.Contains(SearchKeyword))
+            {
+                Console.WriteLine("Textpresent");
+            }
+            else
+            {
+                Assert.Fail("Given Text is not present in Body");
+            }
+        }
+
+        public static void CheckReponseBodyEquals(HttpResponseMessage response,string responsebody)
+        {
+            String ResponseStr = response.Content.ReadAsStringAsync().Result.ToString();
+            Assert.IsTrue(ResponseStr.Equals(responsebody));
+        }
        private static dynamic Getjson(HttpResponseMessage response)
         {
             var content = response.Content.ReadAsStringAsync().Result;
