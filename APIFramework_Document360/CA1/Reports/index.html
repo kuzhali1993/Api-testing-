@@ -55,7 +55,7 @@
           </li>
             <li class="m-r-10">
                 <a href="#">
-                    <span class="badge badge-primary">09-06-2021 19:54:33</span>
+                    <span class="badge badge-primary">21-06-2021 20:15:04</span>
                 </a>
             </li>
         </ul>
@@ -127,36 +127,36 @@
 											<i class="fa fa-tag"></i>
 										</a>
 										<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-												<a class="dropdown-item" href="#">Testcases</a>
+												<a class="dropdown-item" href="#">Teams</a>
 										</ul>
                                     </li>
 									                                </ul>
                             </div>
                             <div class="test-list-wrapper scrollable">
                                 <ul class="test-list-item">
-										<li class="test-item" status="pass" author="" device="" tag="Testcases"> 
+										<li class="test-item" status="pass" author="" device="" tag="Teams"> 
 											<div class="status-avatar pass-bg">
 												<i class="fa fa-check text-white"></i>
 											</div>
 											<div class="open-test">
 												<div class="test-detail"> 
-													<p class="name">GetAllVersions</p> 
-													<p class="duration text-sm">0h:0m:0s+024ms</p> 
-													<span class="datetime">19:54:33 PM</span>
+													<p class="name">Add_User_to_Project</p> 
+													<p class="duration text-sm">0h:0m:2s+245ms</p> 
+													<span class="datetime">20:15:04 PM</span>
 												</div>
 											</div>
 											<div class="test-contents d-none">
 												<div class="detail-head">
 													<div class="p-v-10 d-inline-block">	
 														<div class="info">
-															<h5 class="test-status text-pass">GetAllVersions</h5>
-															<span class='badge badge-success'>09-06-2021 19:54:33</span>
-															<span class='badge badge-danger'>09-06-2021 19:54:33</span>
-															<span class='badge badge-default'>0h:0m:0s+024ms</span>
+															<h5 class="test-status text-pass">Add_User_to_Project</h5>
+															<span class='badge badge-success'>21-06-2021 20:15:04</span>
+															<span class='badge badge-danger'>21-06-2021 20:15:07</span>
+															<span class='badge badge-default'>0h:0m:2s+245ms</span>
 														</div>
 														<div class="m-t-15">
 		                                        				<div class="attributes">
-						<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Testcases</span> 	
+						<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Teams</span> 	
 			</div>
 
 														</div>
@@ -168,7 +168,7 @@
 			<div class="card">
 				<div class="card-header" role="tab">
 					<h5 class="card-title">
-						<div class="node">sample</div>
+						<div class="node">test TS in log</div>
 						<div class="status-avatar float-right pass-bg">
 							<i class="fa fa-check text-white"></i>
                         </div>
@@ -185,8 +185,39 @@
 	</tr></thead>
 	<tbody>
 			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>20:15:07</td>
+				<td>
+https://apihub.document360.info/v1/Teams									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-info text-info"></i></td>
+				<td>20:15:07</td>
+				<td>
+<textarea disabled class='code-block'>{
+  "data": null,
+  "extension_data": null,
+  "context": null,
+  "success": false,
+  "errors": [],
+  "warnings": [],
+  "information": [
+    {
+      "extension_data": null,
+      "description": "User already exist in this project"
+    }
+  ]
+}</textarea>									</td>
+			</tr>
+			<tr class="event-row">
 				<td><i class="fa fa-check text-pass"></i></td>
-				<td>19:54:33</td>
+				<td>20:15:07</td>
+				<td>
+Status code check : Expected status code (200)is equal to Actual code									</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>20:15:07</td>
 				<td>
 <span class='badge white-text green'>Overall status - Testcase Passed!</span>									</td>
 			</tr>

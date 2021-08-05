@@ -10,55 +10,63 @@ using System.Threading.Tasks;
 
 namespace APIFramework_Document360.Testcases
 {
-   
+    [TestFixture,Order(4)]
     class sample : BaseClass
     {
-        public string url;
-        
+        public sample()
+        {
+            Excel.OpenExcelSheet("Categories");
+        }
        
+
+         public string url = "https://api.document360.info//api/settings/add-project";
+        public string geturl,payload;
+            
         [SetUp]
         public void Initialize()
         {
             
-            url = Urlpath.GetCategories + GetEnvironmentVariable("ProjectversionId");
-           
+            geturl = Urlpath.GetCategories + GetEnvironmentVariable("ProjectversionId");
+            
         }
 
-
-        [Test,Order(1)]
+        [Test,Order(2)]
         public void GetCategories_WithValidData()
         {
             Headers.Add("Authorization", GetEnvironmentVariable("AuthorizationToken"));
             Headers.Add("ProjectId", GetEnvironmentVariable("ProjectId"));
-            var response = WebClient.GetResponse(url,Headers);
+            var response = WebClient.GetResponse(geturl,Headers);
             
             //Response code
            Snippets.AssertResponseCode(response, 200);
             
-         //   Snippets.CheckJsonValue(response, "categories[0].title",Condition.Equal,"new category gtrytr yt");
+         //   Snippets.AssertJsonValue(response, "categories[0].title",Condition.Equal,"new category gtrytr yt");
             Snippets.CheckBodyContains(response, "kuzhali");
+
+            
         }
 
-        [Test,Order(2)]
-        public void GetCategories_Invaliddata()
+
+        [TestCase("properName")]
+        [TestCase("WithspecChar&^%")]
+        [TestCase("With-Hypen")]
+        [TestCase("123456")]
+        [TestCase("With space")]
+        [Test,Order(1)]
+        public void Addproject(string name)
         {
-            //Headers.Add("Authorization", EnvironmentVariable["AuthorizationToken"]);
+            Headers.Add("Authorization", GetEnvironmentVariable("AuthorizationToken"));
             Headers.Add("ProjectId", GetEnvironmentVariable("ProjectId"));
-            var response = WebClient.GetResponse(url, Headers);
-
-            //Response code
+            payload = Excel.GetRequestBoby("Addproject");
+            var body = Snippets.SetJsonvalue(payload,"pname", name);
+            var response = WebClient.PostRequest(url, Headers, body);
             Snippets.AssertResponseCode(response, 200);
-
-            //   Snippets.CheckJsonValue(response, "categories[0].title",Condition.Equal,"new category gtrytr yt");
-            Snippets.CheckBodyContains(response, "kuzhali");
         }
 
         [TearDown]
         public void close()
         {
-            // Reporter.LogResult();
-            Headers.Clear();
-            Console.WriteLine(Headers.Count);
+           
 
         }
     }

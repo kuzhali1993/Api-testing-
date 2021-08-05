@@ -20,7 +20,7 @@
     <chartVisibilityOnOpen>true</chartVisibilityOnOpen>
 
     <!-- report name - displayed at top-nav -->
-    <reportName>kuzhali</reportName>
+    <reportName>Kuzhali Maheswaran</reportName>
 
     <!-- location of charts in the test view -->
     <!-- top, bottom -->
@@ -28,18 +28,18 @@
 
     <!-- custom javascript -->
     <scripts>
-      <![CDATA[
-                $(document).ready(function() {
-                    $('h6.card-title:first').text('Job partner')
-                });
+      <![CDATA[                
+                   
+             "kuzhali"  
             ]]>
     </scripts>
 
     <!-- custom styles -->
     <styles>
       <![CDATA[
-                
+       $(document).ready(function() { $("//h6[.='Tests']").text("Some Small HTML text" ); });
             ]]>
-    </styles>
+    
+      </styles>
   </configuration>
 </extentreports>

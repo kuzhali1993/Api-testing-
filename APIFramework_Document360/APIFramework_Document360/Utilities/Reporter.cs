@@ -15,13 +15,13 @@ using System.IO;
 
 namespace APIFramework_Document360.Utilities
 {
-    class Reporter : BaseClass
+    public class Reporter : BaseClass
     {
         public static ExtentReports report;
         public static ExtentTest parentLogger;
         public static ExtentTest testcaseLogger;
         public static ExtentHtmlReporter HtmlReport;
-        
+        public static dynamic status;
        
         public static void CreateReport()
         {
@@ -29,7 +29,7 @@ namespace APIFramework_Document360.Utilities
             //String ReportPath = path + "MyReport.html";
 
             HtmlReport = new ExtentHtmlReporter(path);
-            HtmlReport.LoadConfig("D:\\Back_up_important\\Local Repo(API Testing)\\APIFramework_Document360\\APIFramework_Document360\\extent-config.xml");
+            HtmlReport.LoadConfig(@"D:\Automation\Local Repo(API Testing)\APIFramework_Document360\APIFramework_Document360\extent-config.xml");
             HtmlReport.Config.DocumentTitle = "Document360";
             HtmlReport.Config.ReportName = "Edited reportername";
             
@@ -38,7 +38,7 @@ namespace APIFramework_Document360.Utilities
                 report = new ExtentReports();
                 report.AddSystemInfo("HostName", "Kuzhali");
                 report.AddSystemInfo("Environment", "QA");
-                report.AddSystemInfo("Reporter Name", "Kuzhali");
+               // report.AddSystemInfo("Reporter Name", "Kuzhali");
 
                 // HtmlReport.Configuration().DocumentTitle = "Automation Test report";
                 //HtmlReport.Configuration().ReportName = "kuzhali";
@@ -67,7 +67,14 @@ namespace APIFramework_Document360.Utilities
             {
                 
                 parentLogger = report.CreateTest(name);
-                
+                var str = Path.GetFullPath(TestContext.CurrentContext.Test.ClassName);
+
+                string lastFolderName = Path.GetFileName(str);
+                var trimstr = lastFolderName.Substring(0, lastFolderName.LastIndexOf('.'));
+                var CategoryName = trimstr.Split('.').Last();
+
+                parentLogger.AssignCategory(CategoryName);
+
             }
             catch (Exception e)
             {
@@ -82,11 +89,10 @@ namespace APIFramework_Document360.Utilities
             try
             {
 
-                testcaseLogger = parentLogger.CreateNode(TestContext.CurrentContext.Test.Name);
-                string path = GetFolderPath(TestContext.CurrentContext.Test.ClassName);
-                
-                //Logger = report.CreateTest(TestContext.CurrentContext.Test.Name);
-               // testcaseLogger.AssignCategory(lastFolderName);
+                // testcaseLogger = parentLogger.CreateNode(TestContext.CurrentContext.Test.Name);
+                testcaseLogger = parentLogger.CreateNode(TestContext.CurrentContext.Test.Properties["test scenarios"].ElementAt(0).ToString());
+
+
             }
             catch (Exception e)
             {
@@ -99,9 +105,8 @@ namespace APIFramework_Document360.Utilities
             try
             {
                 testcaseLogger.Info(str);
-               
-                testcaseLogger.Log(Status.Fail,MarkupHelper.CreateLabel("sample text",ExtentColor.Red));
-              //  testcaseLogger.Pass()
+                         
+              
             }
             catch (Exception e)
             {
@@ -115,6 +120,7 @@ namespace APIFramework_Document360.Utilities
             try
             {
                 var status = TestContext.CurrentContext.Result.Outcome.Status;
+                var overallstatus = status;
                 var stacktrace = "<pre>" + TestContext.CurrentContext.Result.StackTrace + "</pre>";
 
                 var error = TestContext.CurrentContext.Result.Message;
@@ -122,13 +128,16 @@ namespace APIFramework_Document360.Utilities
                 switch (status)
                 {
                     case TestStatus.Failed:
-                        testcaseLogger.Log(Status.Fail, "Testcase Failed with error: -" + error);
-                        break;
+                        {
+                            testcaseLogger.Log(Status.Fail, MarkupHelper.CreateLabel("Overall staus: Testcase Failed!", ExtentColor.Red, ExtentColor.White));
+                            testcaseLogger.Log(Status.Info, MarkupHelper.CreateCodeBlock(error));
+                            break;
+                        }
                     case TestStatus.Skipped:
-                        testcaseLogger.Log(Status.Skip, "Testcase skipped!");
+                        testcaseLogger.Log(Status.Skip,MarkupHelper.CreateLabel("Overall staus - Testcase skipped!",ExtentColor.Blue,ExtentColor.White));
                         break;
                     default:
-                        testcaseLogger.Log(Status.Pass,"Testcase Passed!");
+                        testcaseLogger.Log(Status.Pass,MarkupHelper.CreateLabel("Overall status - Testcase Passed!", ExtentColor.Green, ExtentColor.White));
                         break;
 
 

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIFramework_Document360", "APIFramework_Document360\APIFramework_Document360.csproj", "{2B1A26BF-5CFC-4B85-A971-1C418E7BE53F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kovai.co_Core", "APIFramework_Document360\Kovai.co_Core.csproj", "{2B1A26BF-5CFC-4B85-A971-1C418E7BE53F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CA1", "CA1\CA1.csproj", "{453F2D6E-B282-4D0A-951C-6F5FB4766B4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{2B1A26BF-5CFC-4B85-A971-1C418E7BE53F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B1A26BF-5CFC-4B85-A971-1C418E7BE53F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B1A26BF-5CFC-4B85-A971-1C418E7BE53F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{453F2D6E-B282-4D0A-951C-6F5FB4766B4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{453F2D6E-B282-4D0A-951C-6F5FB4766B4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{453F2D6E-B282-4D0A-951C-6F5FB4766B4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{453F2D6E-B282-4D0A-951C-6F5FB4766B4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

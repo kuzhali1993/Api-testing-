@@ -7,11 +7,16 @@ using APIFramework_Document360.TestData_Repository;
 using APIFramework_Document360.Utilities;
 using NUnit.Framework;
 
-namespace APIFramework_Document360.Testcases.Category_Manager
+
+namespace APIFramework_Document360.Testcases
 {
-    class GetCategories : BaseClass
+    [TestFixture, Order(2)]
+    class Get_Categories : BaseClass
     {
         private string url = Urlpath.GetCategories + GetEnvironmentVariable("ProjectversionId");
+        public string catname = "category";
+       
+       
 
         [Test,Order(1)]
         public void GetCategory_ForvalidData()
@@ -23,7 +28,7 @@ namespace APIFramework_Document360.Testcases.Category_Manager
             //Response code check
             Snippets.AssertResponseCode(response, 200);
             //Check Json value
-            Snippets.CheckJsonValue(response, "categories[0].title", Condition.Equal, "new category gtrytr yt");
+            Snippets.AssertJsonValue(response, "categories[0].title", Condition.Equal, "new category gtrytr yt");
 
         }
 
@@ -35,12 +40,12 @@ namespace APIFramework_Document360.Testcases.Category_Manager
             var response = WebClient.GetResponse(url, Headers);
 
             //Response code
-            Snippets.AssertResponseCode(response, 200);
+            Snippets.AssertResponseCode(response, 401);
 
            
             Snippets.CheckBodyContains(response, "kuzhali");
         }
 
-
+        
     }
 }
